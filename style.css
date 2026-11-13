@@ -1,0 +1,609 @@
+
+/* ============================= */
+/* 1. GENERAL SETTINGS */
+/* ============================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #100e0b;
+    color: #fff5df;
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+}
+
+/* All sections */
+
+section {
+    min-height: 100vh;
+    padding: 90px 20px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+    overflow: hidden;
+}
+
+/* Titles */
+
+h1, h2, h3 {
+    font-family: 'Playfair Display', serif;
+}
+
+h1 {
+    font-size: 65px;
+    color: #f1d18a;
+    margin: 25px 0;
+}
+
+h1 span {
+    color: #c99b45;
+    font-style: italic;
+}
+
+h2 {
+    font-size: 38px;
+    color: #e6c27a;
+    margin: 20px 0;
+}
+
+/* Small golden subtitles */
+
+.subtitle {
+    color: #c9a45c;
+    font-size: 12px;
+    letter-spacing: 4px;
+    margin-bottom: 15px;
+}
+
+/* Paragraphs */
+
+.home-text,
+.instruction {
+    color: #d2c5ac;
+    margin: 15px 0 30px;
+    line-height: 1.8;
+}
+
+/* Buttons */
+
+button {
+    background: linear-gradient(135deg, #f5dfa9, #c09343);
+
+    border: none;
+    border-radius: 30px;
+
+    padding: 15px 30px;
+
+    color: #21180d;
+    font-size: 14px;
+    font-weight: 500;
+
+    cursor: pointer;
+    transition: 0.3s;
+
+    margin-top: 25px;
+}
+
+button:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 5px 25px #d6ae5b66;
+}
+
+/* ============================= */
+/* 2. HOMEPAGE */
+/* ============================= */
+
+#home {
+    background:
+        radial-gradient(
+            circle at center,
+            #302313,
+            #100e0b 70%
+        );
+}
+
+.home-text {
+    max-width: 450px;
+}
+
+#home h1 {
+    line-height: 1.2;
+}
+
+/* Golden decorative particles */
+
+#home::before,
+#home::after {
+    content: "✦";
+    position: absolute;
+    color: #d8b56d;
+    font-size: 35px;
+    opacity: 0.6;
+    animation: sparkle 3s infinite alternate;
+}
+
+#home::before {
+    top: 20%;
+    left: 15%;
+}
+
+#home::after {
+    bottom: 20%;
+    right: 15%;
+}
+
+@keyframes sparkle {
+    from {
+        opacity: 0.2;
+        transform: scale(0.7);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1.3);
+    }
+}
+
+/* ============================= */
+/* 3. LETTER SECTION */
+/* ============================= */
+
+#letter {
+    background-color: #15110d;
+}
+
+.envelope {
+    width: 300px;
+    height: 200px;
+
+    position: relative;
+    margin: 60px auto;
+
+    cursor: pointer;
+    perspective: 1000px;
+}
+
+/* Envelope background */
+
+.envelope-back {
+    position: absolute;
+
+    width: 100%;
+    height: 100%;
+
+    background: #c49a53;
+    border-radius: 5px;
+}
+
+/* Letter inside the envelope */
+
+.letter-paper {
+    position: absolute;
+
+    width: 90%;
+    height: 90%;
+
+    left: 5%;
+    bottom: 5%;
+
+    background: #fff4d9;
+    color: #332617;
+
+    padding: 25px;
+
+    font-family: 'Playfair Display', serif;
+    font-size: 14px;
+    line-height: 1.9;
+
+    text-align: left;
+
+    overflow-y: auto;
+
+    transition: transform 1s;
+
+    z-index: 1;
+}
+
+.letter-paper h3 {
+    color: #9c7334;
+    font-size: 23px;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.letter-paper p {
+    margin-bottom: 18px;
+    color: #4b3b27;
+}
+
+.signature {
+    font-style: italic;
+    text-align: right;
+}
+
+/* Envelope front */
+
+.envelope-front {
+    position: absolute;
+
+    bottom: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background: #d8b36c;
+
+    clip-path: polygon(
+        0 0,
+        50% 55%,
+        100% 0,
+        100% 100%,
+        0 100%
+    );
+
+    z-index: 2;
+}
+
+/* Envelope opening flap */
+
+.envelope-flap {
+    position: absolute;
+
+    top: 0;
+
+    width: 100%;
+    height: 60%;
+
+    background: #f0d69e;
+
+    clip-path: polygon(
+        0 0,
+        100% 0,
+        50% 100%
+    );
+
+    transform-origin: top;
+    transition: transform 0.8s;
+
+    z-index: 4;
+}
+
+/* Heart seal */
+
+.seal {
+    position: absolute;
+
+    top: 48%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    background: #873a2c;
+    color: #f5d99b;
+
+    width: 40px;
+    height: 40px;
+
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    z-index: 5;
+}
+
+/* Envelope animation */
+
+.envelope.open .envelope-flap {
+    transform: rotateX(180deg);
+}
+
+.envelope.open .letter-paper {
+    transform: translateY(-170px);
+    z-index: 6;
+}
+
+/* ============================= */
+/* 4. CAKE SECTION */
+/* ============================= */
+
+#cake {
+    background:
+        radial-gradient(
+            circle,
+            #2a2014,
+            #100e0b 75%
+        );
+}
+
+.cake-container {
+    margin: 50px auto;
+    width: 280px;
+    cursor: pointer;
+}
+
+/* Candles */
+
+.candles {
+    height: 85px;
+
+    display: flex;
+    justify-content: center;
+    gap: 35px;
+    align-items: flex-end;
+}
+
+.candle {
+    width: 14px;
+    height: 65px;
+
+    background: repeating-linear-gradient(
+        45deg,
+        #fff0c9 0px,
+        #fff0c9 8px,
+        #c99b45 8px,
+        #c99b45 13px
+    );
+
+    border-radius: 4px;
+
+    position: relative;
+}
+
+/* Candle flames */
+
+.flame {
+    position: absolute;
+
+    top: -23px;
+    left: 2px;
+
+    width: 10px;
+    height: 20px;
+
+    background: #ffb52e;
+
+    border-radius: 50% 50% 50% 0;
+
+    transform: rotate(-45deg);
+
+    box-shadow: 0 0 15px #ffb52e;
+
+    animation: flicker 0.5s infinite alternate;
+}
+
+@keyframes flicker {
+    from {
+        transform: rotate(-45deg) scale(1);
+    }
+
+    to {
+        transform: rotate(-40deg) scale(0.85);
+    }
+}
+
+/* Cake top */
+
+.cake-top {
+    width: 230px;
+    height: 40px;
+
+    margin: auto;
+
+    background: #f5e4c3;
+
+    border-radius: 50%;
+
+    position: relative;
+    z-index: 2;
+}
+
+/* Cake body */
+
+.cake-body {
+    width: 260px;
+    height: 75px;
+
+    margin: -10px auto 0;
+
+    background: linear-gradient(
+        90deg,
+        #a66f38,
+        #e9c27b,
+        #a66f38
+    );
+
+    border-radius: 10px 10px 25px 25px;
+}
+
+/* Cake plate */
+
+.cake-plate {
+    width: 290px;
+    height: 15px;
+
+    background: linear-gradient(
+        #f8e7bd,
+        #b38a45
+    );
+
+    border-radius: 50%;
+}
+
+/* When candles are blown */
+
+#cakeContainer.blown .flame {
+    display: none;
+}
+
+#wishMessage {
+    color: #f1d18a;
+    font-size: 24px;
+    min-height: 40px;
+    margin: 20px;
+}
+
+
+/* ============================= */
+/* 5. PHOTO GALLERY */
+/* ============================= */
+
+#memories {
+    background-color: #15110d;
+}
+
+.gallery {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    justify-content: center;
+
+    gap: 25px;
+
+    margin: 45px 0;
+}
+
+/* Individual photo cards */
+
+.photo-card {
+    width: 220px;
+
+    background: #f5ead3;
+
+    padding: 10px;
+
+    transform: rotate(-3deg);
+
+    transition: 0.4s;
+
+    box-shadow: 0 10px 30px #0008;
+}
+
+.photo-card:nth-child(2) {
+    transform: rotate(3deg);
+}
+
+.photo-card:nth-child(3) {
+    transform: rotate(-1deg);
+}
+
+/* Hover animation */
+
+.photo-card:hover {
+    transform: rotate(0deg) translateY(-10px);
+}
+
+/* Images */
+
+.photo-card img {
+    width: 100%;
+    height: 240px;
+
+    object-fit: cover;
+}
+
+/* Captions */
+
+.photo-card p {
+    color: #70542c;
+
+    font-family: 'Playfair Display', serif;
+
+    padding: 12px 0;
+}
+
+/* Final birthday message */
+
+.final-message {
+    line-height: 1.4;
+}
+
+/* ============================= */
+/* 6. RESPONSIVE DESIGN */
+/* ============================= */
+
+@media (max-width: 600px) {
+
+    h1 {
+        font-size: 45px;
+    }
+
+    h2 {
+        font-size: 29px;
+    }
+
+    .gallery {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .photo-card {
+        width: 240px;
+    }
+
+    .envelope {
+        width: 280px;
+    }
+
+}
+
+#musicButton {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+
+    background: linear-gradient(135deg, #d4af37, #f5df9b);
+    color: #21190b;
+
+    border: none;
+    border-radius: 30px;
+    padding: 12px 20px;
+
+    font-family: 'Poppins', sans-serif;
+    font-size: 13px;
+    font-weight: bold;
+
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+}
+
+#musicButton:hover {
+    transform: scale(1.05);
+}
+
+#particles {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 999;
+}
+
+.particle {
+    position: absolute;
+    top: -20px;
+    color: #f1d18a;
+    animation: falling linear forwards;
+}
+
+@keyframes falling {
+    to {
+        transform: translateY(110vh) rotate(360deg);
+        opacity: 0;
+    }
+}

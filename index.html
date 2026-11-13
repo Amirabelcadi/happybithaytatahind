@@ -1,0 +1,301 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Happy Birthday Tata Hind!</title>
+
+    <!-- CSS file -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <audio id="birthdayMusic" loop>
+       <source src="birthday-music.mp3" type="audio/mpeg">
+    </audio>
+
+    <button id="musicButton" onclick="toggleMusic()">🎵 Musik abspielen</button>
+
+    <!-- ========================= -->
+    <!-- 1. HOMEPAGE -->
+    <!-- ========================= -->
+
+    <section id="home">
+
+        <p class="subtitle">EIN BESONDERER TAG FÜR EINEN BESONDEREN MENSCHEN</p>
+
+        <h1>
+            Happy Birthday
+            <br>
+            <span>Tata Hind</span>
+        </h1>
+
+        <p class="home-text">
+            Heute dreht sich alles darum, dich zu feiern.
+            Ich habe eine kleine Überraschung für dich vorbereitet!
+        </p>
+
+        <button onclick="openSection('letter')">
+           ÖFFNE DEINE ÜBERRASCHUNG✨
+        </button>
+
+    </section>
+
+
+    <!-- ========================= -->
+    <!-- 2. BIRTHDAY LETTER -->
+    <!-- ========================= -->
+
+    <section id="letter">
+
+        <p class="subtitle">EINE NACHRICHT VON HERZEN ❤️</p>
+
+        <h2>EIN KLEINER BRIEF FÜR DICH</h2>
+
+        <p class="instruction">
+            Klicke auf den Umschlag, um deinen Brief zu entdecken.
+        </p>
+
+
+        <!-- Envelope -->
+
+        <div class="envelope" id="envelope" onclick="openLetter()">
+
+            <div class="envelope-back"></div>
+
+            <!-- The letter inside the envelope -->
+
+            <div class="letter-paper" id="letterPaper">
+
+                <h3>Liebe Tante, ❤️</h3>
+
+                <p>
+                    Happy birthday to the Bogossa of the Belcadi family!
+                    ❤️😂
+                </p>
+
+                <p>
+                 Ich werde diese Sommer nie vergessen, in denen wir früher mit meinen Cousins
+                 und Cousinen an den Strand gefahren sind. Auch wenn ich Schwimmen gehasst 
+                 habe und das Gefühl von Sand an meinen Füßen überhaupt nicht ausstehen konnte,
+                 gehören diese Tage immer noch zu den schönsten Erinnerungen meiner Kindheit.
+                 Und erst diese völlig geschmacklosen Sandwiches,die meine Mutter immer für alle gemacht hat! 
+                 Irgendwie vermisse ich sogar die. Ich glaube,ich würde alles dafür geben, noch einmal in diese Zeit
+                 zurückreisen und all diese kleinen Momente wieder erleben zu können.Damals kamen sie uns vielleicht ganz gewöhnlich vor,
+                 aber heute bedeuten sie mir unglaublich viel.
+
+                </p>
+
+                <p>
+                   Danke, dass du ein Teil unseres Lebens bist und für den wunderbaren Menschen,
+                   der du bist. Du bedeutest uns allen viel mehr,als du wahrscheinlich ahnst,
+                   auch wenn wir nicht immer wissen, wie wir das in Worte fassen sollen.
+                </p>
+
+                <p>
+                  Tata, ich werde niemals vergessen,
+                  wie du Papa in diesem schwierigen Jahr zur Seite gestanden hast. 
+                  Ich schwöre, du bist in meinen Augen unglaublich gewachsen.
+                  Nicht jeder Mensch hat die Stärke und das Herz, so etwas zu tun
+                  Ich weiß noch, dass ich damals dachte, du wärst wirklich wie Wonder Woman.
+                  Dafür werde ich dir immer dankbar sein,und ich hoffe, du weißt,
+                  wie viel uns das bedeutet hat.
+
+
+
+                </p>
+
+                <p>
+                  
+                    Mehr als alles andere wünsche ich dir Glück.Ich wünsche dir Gesundheit,
+                    wunderschöne Momente und ein Leben, in dem du dich geliebt,
+                    geschätzt und frei fühlst, all das zu tun,was dich glücklich macht.
+                    Ich hoffe, dass deine Liebsten immer an deiner Seite
+                    sind und dass das Leben dir genauso viel Liebe und Güte zurückgibt,
+                    wie du anderen schenkst.
+
+
+                </p>
+
+                <p>
+                     Ich liebe dich, Tata. Und natürlich herzlichen Glückwunsch zu Linas Hochzeit!
+                     Na, wie fühlt es sich an, jetzt offiziell eine Nssiba zu sein?😂❤️
+                </p>
+
+                <p>
+                    <strong>P.S.</strong> Bitteeeee behalte diesen Brief für dich.
+                    Es fällt mir nicht besonders leicht, meine Gefühle laut auszusprechen,
+                     aber das bedeutet nicht, dass ich sie nicht empfinde. Manchmal habe ich
+                      so viel zu sagen und weiß einfach nicht, wie ich es ausdrücken soll.
+                       Also versuche ich es jetzt endlich auf diese Weise.
+
+
+                     
+                </p>
+
+                <p class="signature">
+                    Bisous, mouwah! ♥️💋
+                </p>
+
+            </div>
+
+            <!-- Envelope front -->
+
+            <div class="envelope-front"></div>
+
+            <div class="envelope-flap"></div>
+
+            <div class="seal">♥</div>
+
+        </div>
+
+
+        <button onclick="openSection('cake')">
+            Weiter zur Überraschung →
+        </button>
+
+    </section>
+
+
+    <!-- ========================= -->
+    <!-- 3. BIRTHDAY CAKE -->
+    <!-- ========================= -->
+
+    <section id="cake">
+
+        <p class="subtitle">Schließ die Augen und wünsch dir etwas.</p>
+
+        <h2>wünsch dir etwas!</h2>
+
+        <p class="instruction">
+           Tippe auf den Kuchen, um deine Kerzen auszublasen!
+        </p>
+
+
+        <div class="cake-container"
+             id="cakeContainer"
+             onclick="blowCandles()">
+
+            <!-- Candles -->
+
+            <div class="candles">
+
+                <div class="candle">
+                    <div class="flame"></div>
+                </div>
+
+                <div class="candle">
+                    <div class="flame"></div>
+                </div>
+
+                <div class="candle">
+                    <div class="flame"></div>
+                </div>
+
+            </div>
+
+
+            <!-- Cake -->
+
+            <div class="cake-top"></div>
+
+            <div class="cake-body"></div>
+
+            <div class="cake-plate"></div>
+
+        </div>
+
+
+        <h3 id="wishMessage"></h3>
+
+
+        <button onclick="openSection('memories')">
+            Sieh dir unsere Erinnerungen an →
+        </button>
+
+    </section>
+
+
+    <!-- ========================= -->
+    <!-- 4. PHOTO GALLERY -->
+    <!-- ========================= -->
+
+    <section id="memories">
+
+        <p class="subtitle">Ein kostbarer Moment</p>
+
+        <h2>Wunderschöne Erinnerungen</h2>
+
+        <p class="instruction">
+            Eine kleine Sammlung unvergesslicher Momente.
+        </p>
+
+
+        <div class="gallery">
+
+            <div class="photo-card">
+
+                <img src="photo1.jpg" alt="Memory 1">
+
+                <p> Tata sara khayfa men père noel ♡</p>
+
+            </div>
+
+
+            <div class="photo-card">
+
+                <img src="photo2.jpg" alt="Memory 2">
+
+                <p> Ein besonderer Moment ✨</p>
+
+            </div>
+
+
+            <div class="photo-card">
+
+                <img src="photo3.jpg" alt="Memory 3">
+
+                <p> Lehmer ya le3mer ♡</p>
+
+            </div>
+
+            <div class="photo-card">
+                <img src="photo4.jpg" alt="Memmory 4">
+
+                <p> Ayam zamane </p>
+            </div>
+
+        </div>
+
+
+        <h2 class="final-message">
+           Ich wünsche dir
+            <br>
+            ganz viel Glück!
+        </h2>
+
+        <p class="subtitle">In Liebe, für immer</p>
+
+
+        <button onclick="openSection('home')">
+            Zurück zum Anfang ↑
+        </button>
+
+    </section>
+
+
+    <!-- JavaScript file -->
+
+    <script src="script.js"></script>
+    <div id="particles"></div>
+</body>
+
+</html>
